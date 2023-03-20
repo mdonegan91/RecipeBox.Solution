@@ -16,4 +16,4 @@ User functions:
 - all can read Recipes
 
 Tag has cuisine
-Recipe has Instructions and Ingredients!
+Recipe has Instructions and Ingredients!!
