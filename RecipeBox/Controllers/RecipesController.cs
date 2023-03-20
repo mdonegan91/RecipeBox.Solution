@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
+using System;
 
 namespace RecipeBox.Controllers
 {
@@ -124,56 +125,28 @@ namespace RecipeBox.Controllers
       return RedirectToAction("Index");
     }
 
+    // This one works! Do not delete! -- Search by recipe title
     [HttpPost, ActionName("Search")]
-    public ActionResult Search(string search)
+    public ActionResult Search(string food)
     {
-      List<Recipe> model = _db.Recipes.Where(recipe => recipe.RecipeName == search).ToList();
+      List<Recipe> model = _db.Recipes.Where(recipe => recipe.RecipeName == food).ToList();
       return View(model);
     }
 
-// Unsuccessful search attempts using Views/Recipes/Search
-    // public ActionResult Search()
-    // {
-    //   return View();
-    // }
-
-    // [HttpPost, ActionName ("Search")]
-    // public ActionResult Search(string search)
-    // {
-    //   List<Recipe> model = _db.Recipes
-    //                         .Where(recipe => recipe.Ingredients.ToLower()
-    //                         .Contains(search.ToLower())).ToList();
-    //   return View("Index", model);
-    // }
-
-    // [HttpGet("/recipes/search")]
+    // [HttpPost, ActionName("Search")]
     // public ActionResult Search(string food)
     // {
-    //   List<Recipe> allRecipes = Recipe.GetAll();
-    //   List<Recipe> recipeSearch = new List<Recipe>();
-    //   foreach(Recipe element in allRecipes)
-    //   {
-    //     string recipeInstance = element.Ingredients.ToLower();
-    //     if (recipeInstance.Contains(food.ToLower()))
-    //     {
-    //       recipeSearch.Add(element);
-    //     }
-    //   }
-    //   return View(recipeSearch);
+    //   List<Recipe> model = _db.Recipes.Where(recipe => recipe.RecipeName.Contains(food).ToLower()).ToList();
+    //   return View(model);
     // }
 
-    // public ActionResult Search ()
-    // {
-    //   return View();
-    // }
-
+// This is what we want: searching through ingredients
     // [HttpPost, ActionName("Search")]
-    // public ActionResult FindIngredient(string food)
-    //   {
-    //   List<Recipe> thisRecipe = _db.Recipes
-    //                                 .Include(recipe => recipe.Ingredients)
-    //                                 .Where(recipe => recipe.Ingredients.Contains(food.ToLower())).ToList();
-    //   return View("Index", thisRecipe);
+    // public ActionResult Search(string food)
+    // {
+    //   List<Recipe> model = _db.Recipes.Where(recipe => recipe.Ingredients.ToLower()
+    //                           .Contains(food.ToLower())).ToList();
+    //   return View(model);
     // }
   }
 }

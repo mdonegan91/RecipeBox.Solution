@@ -13,10 +13,10 @@
 <p>Here are the ingredients you will need: </p>
 <p>@Html.DisplayFor(model => model.Ingredients)</p> @* Fix this! *@
 
-<h3>@Html.DisplayNameFor(model => model.Instructions)</h3>
+<h3>@Html.DisplayNameFor(model => model.Instructions):</h3>
 <p>@Html.DisplayFor(model => model.Instructions)</p>
 
-<h3>@Html.DisplayNameFor(model => model.Ranking)</h3>
+<h3>@Html.DisplayNameFor(model => model.Ranking):</h3>
 <p>@Html.DisplayFor(model => model.Ranking)</p>
 
 @if(@Model.JoinEntities.Count == 0)
@@ -39,8 +39,4 @@ else
   </ul>
 }
 
-<p>@Html.ActionLink("Back to Recipe List", "Index")</p>
-<p>@Html.ActionLink("Edit Recipe", "Edit", new { id = Model.RecipeId })</p>
-<p>@Html.ActionLink("Add a Tag", "AddTag", new { id = Model.RecipeId })</p>
-<p>@Html.ActionLink("Delete Recipe", "Delete", new { id = Model.RecipeId })</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<p>@Html.ActionLink("Edit Recipe", "Edit", new { id = Model.RecipeId }) | @Html.ActionLink("Add a Tag", "AddTag", new { id = Model.RecipeId }) | @Html.ActionLink("Delete Recipe", "Delete", new { id = Model.RecipeId })</p>

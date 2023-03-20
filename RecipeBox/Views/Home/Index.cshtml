@@ -31,14 +31,13 @@ else
 <hr>
 
 @using (Html.BeginForm("Search","Recipes")) {
-<input class="mdl-textfield__input" type="text" name="search" id="sample3">
-<label class="mdl-textfield__label" for="sample3">Search Recipes By Name</label>
+<label class="mdl-textfield__label" for="sample3">Search Recipes By Name:</label>
 <br>
+<input class="mdl-textfield__input" type="text" name="search" id="sample3"><br><br>
 <input type="submit" name = "search" value="Search Recipes"/>
 }
 
 <hr>
 
-<p>@Html.ActionLink("Manage recipes", "Index", "Recipes")</p> 
-<p>@Html.ActionLink("Manage tags", "Index", "Tags")</p>
+<p>@Html.ActionLink("Manage recipes", "Index", "Recipes") | @Html.ActionLink("Manage tags", "Index", "Tags")</p>
 <p>@Html.ActionLink("Create or manage an account", "Index", "Account")</p>
