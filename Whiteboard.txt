@@ -14,3 +14,6 @@ Functions:
 User functions:
 - creator can edit and delete their own Recipes
 - all can read Recipes
+
+Tag has cuisine
+Recipe has Instructions and Ingredients

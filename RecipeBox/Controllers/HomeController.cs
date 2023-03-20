@@ -18,5 +18,19 @@ namespace RecipeBox.Controllers
         _userManager = userManager;
         _db = db;
       }
+      
+    [HttpGet("/")]
+      public async Task<ActionResult> Index()
+      {
+        ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
+        if (currentUser != null)
+        {
+          Recipe[] recipes = _db.Recipes
+                      .Where(entry => entry.User.Id == currentUser.Id)
+                      .ToArray();
+          model.Add("recipes", recipes);
+        }
+        return View(model);
+      }
     }
 }

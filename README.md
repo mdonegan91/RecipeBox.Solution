@@ -66,7 +66,7 @@ OR
 ```json
 {
     "ConnectionStrings": {
-        "DefaultConnection": "Server=localhost;Port=3306;database=recipebox;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
+        "DefaultConnection": "Server=localhost;Port=3306;database=recipe_box;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
     }
 }
 ```
@@ -78,7 +78,7 @@ OR
 * 🧑‍🏭 _In root directory of project folder "RecipeBox", run `dotnet ef migrations add restoreDatabase`_
 * 🧑‍🏭 _Then run $ `dotnet ef database update`_
 * 🧑‍🏭 _Open SQL Workbench._
-* 🧑‍🏭 _Navigate to "recipebox" schema._
+* 🧑‍🏭 _Navigate to `"recipe_box"` schema._
 * 🧑‍🏭 _Click the drop down, select "Tables" drop down._
 * 🧑‍🏭 _Verify the tables._
 
