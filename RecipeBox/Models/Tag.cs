@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RecipeBox.Models
 {
@@ -8,5 +9,6 @@ namespace RecipeBox.Models
         [Required(ErrorMessage = "The recipe's cuisine field can't be left empty!")]
         public string Cuisine { get; set; }
         public List<RecipeTag> JoinEntities { get;}
+        public ApplicationUser User { get; set; } 
     }
 }

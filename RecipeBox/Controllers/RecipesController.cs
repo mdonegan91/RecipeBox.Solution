@@ -31,7 +31,7 @@ namespace RecipeBox.Controllers
                               .Where(entry => entry.User.Id == currentUser.Id)
                               //.Include
                               .ToList();
-      return View(userRecpies);
+      return View(userRecipes);
     }
 
     public ActionResult Create()
@@ -60,8 +60,8 @@ namespace RecipeBox.Controllers
     public ActionResult Details(int id)
     {
       Recipe thisRecipe = _db.Recipes
-            .Include(recipe => recipe.Tag)
             .Include(recipe => recipe.JoinEntities)
+            .ThenInclude(join => join.Tag)
             .FirstOrDefault(recipe => recipe.RecipeId == id);
       return View(thisRecipe);
     }

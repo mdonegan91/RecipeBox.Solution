@@ -59,11 +59,11 @@ namespace RecipeBox.Controllers
       }
     }
 
-public ActionResult Details(int id)
+    public ActionResult Details(int id)
     {
       Tag thisTag = _db.Tags
-          .Include(tag => tag.Recipe)
           .Include(tag => tag.JoinEntities)
+          .ThenInclude(join => join.Recipe)
           .FirstOrDefault(tag => tag.TagId == id);
       return View(thisTag);
     }
