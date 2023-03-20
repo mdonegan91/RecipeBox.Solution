@@ -124,14 +124,27 @@ namespace RecipeBox.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpPost, ActionName ("Search")]
+    [HttpPost, ActionName("Search")]
     public ActionResult Search(string search)
     {
-      List<Recipe> model = _db.Recipes
-                            .Where(recipe => recipe.Ingredients == search).ToList();
+      List<Recipe> model = _db.Recipes.Where(recipe => recipe.RecipeName == search).ToList();
       return View(model);
     }
 
+// Unsuccessful search attempts using Views/Recipes/Search
+    // public ActionResult Search()
+    // {
+    //   return View();
+    // }
+
+    // [HttpPost, ActionName ("Search")]
+    // public ActionResult Search(string search)
+    // {
+    //   List<Recipe> model = _db.Recipes
+    //                         .Where(recipe => recipe.Ingredients.ToLower()
+    //                         .Contains(search.ToLower())).ToList();
+    //   return View("Index", model);
+    // }
 
     // [HttpGet("/recipes/search")]
     // public ActionResult Search(string food)

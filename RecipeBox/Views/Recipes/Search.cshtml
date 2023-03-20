@@ -1,29 +1,23 @@
 @{
   Layout = "_Layout";
 }
+@using RecipeBox.Models;
+@using System.Collections.Generic;
+@model List<RecipeBox.Models.Recipe>;
 
-@using RecipeBox.Models
-@model RecipeBox.Models.Recipe
-
-@* <h4>Search for recipes by ingredient</h4>
-@using (Html.BeginForm())
+<br>
+<h4>Search Results</h4>
+@if (Model.Count == 0)
 {
-  @Html.LabelFor(model => model.Ingredients)
-  @Html.TextBoxFor(model => model.Ingredients)
-  
-  <input type="submit" value="Search for Recipe" />
-} *@
-
-@* <h1>Recipes</h1>
-
-@if (@Model.Count == 0)
-{
-  <h3>No recipes match your search!</h3>
-} 
-
-@foreach (Recipe recipe in Model)
-{
-  <li>@Html.ActionLink($"{recipe.RecipeName}", "Details", new { id = recipe.RecipeId })</li>
+  <p> No recipes match this search </p>
 }
-
-<p>@Html.ActionLink("Home", "Index", "Home")</p> *@
+else
+{
+  <ul>
+    @foreach (Recipe recipe in Model)
+    {
+      <li>@Html.ActionLink($"{recipe.RecipeName}", "Details", new { id = recipe.RecipeId })</li>
+    }
+  </ul>
+}
+@Html.ActionLink("Go back to all recipes", "Index")</button>
