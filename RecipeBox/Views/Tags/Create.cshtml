@@ -6,6 +6,8 @@
 
 <h4>Add a new tag</h4>
 
+<p>@Html.ValidationMessageFor(model => model.Cuisine, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Cuisine)
