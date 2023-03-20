@@ -29,7 +29,6 @@ namespace RecipeBox.Controllers
       ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
       List<Recipe> userRecipes = _db.Recipes
                               .Where(entry => entry.User.Id == currentUser.Id)
-                              //.Include
                               .ToList();
       return View(userRecipes);
     }
@@ -124,5 +123,44 @@ namespace RecipeBox.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    [HttpPost, ActionName ("Search")]
+    public ActionResult Search(string search)
+    {
+      List<Recipe> model = _db.Recipes
+                            .Where(recipe => recipe.Ingredients == search).ToList();
+      return View(model);
+    }
+
+
+    // [HttpGet("/recipes/search")]
+    // public ActionResult Search(string food)
+    // {
+    //   List<Recipe> allRecipes = Recipe.GetAll();
+    //   List<Recipe> recipeSearch = new List<Recipe>();
+    //   foreach(Recipe element in allRecipes)
+    //   {
+    //     string recipeInstance = element.Ingredients.ToLower();
+    //     if (recipeInstance.Contains(food.ToLower()))
+    //     {
+    //       recipeSearch.Add(element);
+    //     }
+    //   }
+    //   return View(recipeSearch);
+    // }
+
+    // public ActionResult Search ()
+    // {
+    //   return View();
+    // }
+
+    // [HttpPost, ActionName("Search")]
+    // public ActionResult FindIngredient(string food)
+    //   {
+    //   List<Recipe> thisRecipe = _db.Recipes
+    //                                 .Include(recipe => recipe.Ingredients)
+    //                                 .Where(recipe => recipe.Ingredients.Contains(food.ToLower())).ToList();
+    //   return View("Index", thisRecipe);
+    // }
   }
 }
