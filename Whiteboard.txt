@@ -1,0 +1,16 @@
+- Recipes: ingredients, instructions; equivalent of items
+- tags for categories
+(2 main models: Recipes and Tags, plus RecipeTag)
+
+Functions: 
+- add Recipes
+- edit Recipes
+- update tags
+- delete tags
+- rate Recipes
+- list recipes by highest rating
+- list all recipes with specific ingredients --> search function
+
+User functions:
+- creator can edit and delete their own Recipes
+- all can read Recipes
