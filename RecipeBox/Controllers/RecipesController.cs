@@ -98,7 +98,7 @@ namespace RecipeBox.Controllers
     public ActionResult AddTag(int id)
     {
       Recipe thisRecipe = _db.Recipes.FirstOrDefault(recipes => recipes.RecipeId == id);
-      ViewBag.TagId = new SelectList(_db.Tags, "TagId", "Title");
+      ViewBag.TagId = new SelectList(_db.Tags, "TagId", "Cuisine");
       return View(thisRecipe);
     }
 

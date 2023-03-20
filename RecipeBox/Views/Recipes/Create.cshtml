@@ -23,6 +23,9 @@
   @Html.LabelFor(model => model.Instructions)
   @Html.TextBoxFor(model => model.Instructions)
 
+  @Html.LabelFor(model => model.Ranking)
+  @Html.TextBoxFor(model => model.Ranking)
+
   <input type="submit" value="Add new recipe" />
 }
 <p>@Html.ActionLink("Back to Recipe List", "Index")</p>

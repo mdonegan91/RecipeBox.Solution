@@ -16,6 +16,9 @@
 <h3>@Html.DisplayNameFor(model => model.Instructions)</h3>
 <p>@Html.DisplayFor(model => model.Instructions)</p>
 
+<h3>@Html.DisplayNameFor(model => model.Ranking)</h3>
+<p>@Html.DisplayFor(model => model.Ranking)</p>
+
 @if(@Model.JoinEntities.Count == 0)
 {
   <p>This recipe does not have any tags yet!</p>
@@ -40,3 +43,4 @@ else
 <p>@Html.ActionLink("Edit Recipe", "Edit", new { id = Model.RecipeId })</p>
 <p>@Html.ActionLink("Add a Tag", "AddTag", new { id = Model.RecipeId })</p>
 <p>@Html.ActionLink("Delete Recipe", "Delete", new { id = Model.RecipeId })</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
