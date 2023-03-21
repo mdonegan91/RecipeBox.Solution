@@ -18,5 +18,14 @@ namespace RecipeBox.Models
 
     public List<RecipeTag> JoinEntities { get;}
     public ApplicationUser User { get; set; }
+
+    // public static List<Recipe> IngList { get; set; }
+
+    // public Recipe(string ingredient)
+    // {
+    //   Ingredients = ingredient;
+    //   IngList.Add(this);
+    // }
+
   }
 }

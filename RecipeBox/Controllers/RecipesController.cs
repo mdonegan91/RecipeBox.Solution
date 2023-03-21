@@ -126,27 +126,27 @@ namespace RecipeBox.Controllers
     }
 
     // This one works! Do not delete! -- Search by recipe title
-    [HttpPost, ActionName("Search")]
-    public ActionResult Search(string food)
-    {
-      List<Recipe> model = _db.Recipes.Where(recipe => recipe.RecipeName == food).ToList();
-      return View(model);
-    }
+    // [HttpPost, ActionName("Search")]
+    // public ActionResult Search(string search)
+    // {
+    //   List<Recipe> model = _db.Recipes.Where(recipe => recipe.RecipeName == search).ToList();
+    //   return View(model);
+    // }
 
     // [HttpPost, ActionName("Search")]
-    // public ActionResult Search(string food)
+    // public ActionResult Search(string search)
     // {
-    //   List<Recipe> model = _db.Recipes.Where(recipe => recipe.RecipeName.Contains(food).ToLower()).ToList();
+    //   List<Recipe> model = _db.Recipes.Where(recipe => recipe.RecipeName.Contains(search).ToLower()).ToList();
     //   return View(model);
     // }
 
 // This is what we want: searching through ingredients
-    // [HttpPost, ActionName("Search")]
-    // public ActionResult Search(string food)
-    // {
-    //   List<Recipe> model = _db.Recipes.Where(recipe => recipe.Ingredients.ToLower()
-    //                           .Contains(food.ToLower())).ToList();
-    //   return View(model);
-    // }
+    [HttpPost, ActionName("Search")]
+    public ActionResult Search(string search)
+    {
+      List<Recipe> model = _db.Recipes.Where(recipe => recipe.Ingredients.ToLower()
+                              .Contains(search.ToLower())).ToList();
+      return View(model);
+    }
   }
 }

@@ -1,4 +1,4 @@
-x Recipes: ingredients, instructions; equivalent of items
+cx Recipes: ingredients, instructions; equivalent of items
 x tags for categories
 (2 main models: Recipes and Tags, plus RecipeTag)
 
@@ -9,15 +9,15 @@ x update tags
 x delete tags
 x rate Recipes
 - list recipes by highest rating -- look up dropdown menu with number to select??
-- list all recipes with specific ingredients --> search function
+x list all recipes with specific ingredients --> search function
 
 User functions:
 - creator can edit and delete their own Recipes
 - all can read Recipes
 
 Properties:
-- Tag has cuisine
-- Recipe has Instructions and Ingredients
+x Tag has cuisine
+x Recipe has Instructions and Ingredients
 
 Stretch: 
 - figure out list for Recipe Details display
