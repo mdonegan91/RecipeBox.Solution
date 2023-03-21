@@ -10,7 +10,6 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-  <h4>Recipes for @User.Identity.Name</h4>
   @if (@Model.Count == 0)
   {
     <h3>No recipes have been added yet</h3>

@@ -7,7 +7,6 @@
 <h1>Welcome to the Recipe Box</h1>
 
 <hr>
-
 @if (User.Identity.IsAuthenticated)
 {
   <h4>Recipes for @User.Identity.Name</h4>
@@ -31,7 +30,7 @@ else
 <hr>
 
 @using (Html.BeginForm("Search","Recipes")) {
-<label class="mdl-textfield__label" for="sample3">Search Recipes By Ingredient:</label>
+<label class="mdl-textfield__label" for="sample3">Search All Recipes By Ingredient:</label>
 <br>
 <input class="mdl-textfield__input" type="text" name="search" id="sample3"><br><br>
 <input type="submit" name = "search" value="Search Recipes"/>
@@ -39,7 +38,7 @@ else
 
 <hr>
 
-<p>@Html.ActionLink("Recipes Sorted by Ranking", "Ranking", "Recipes")</p>
+<p>@Html.ActionLink("Recipes from All Chefs Sorted by Ranking", "Ranking", "Recipes")</p>
 
 <hr>
 

@@ -8,7 +8,7 @@ x edit Recipes
 x update tags
 x delete tags
 x rate Recipes
-- list recipes by highest rating -- look up dropdown menu with number to select??
+x list recipes by highest rating -- look up dropdown menu with number to select??
 x list all recipes with specific ingredients --> search function
 
 User functions:

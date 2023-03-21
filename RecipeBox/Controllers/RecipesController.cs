@@ -28,10 +28,8 @@ namespace RecipeBox.Controllers
     {
       string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
-      List<Recipe> userRecipes = _db.Recipes
-                              .Where(entry => entry.User.Id == currentUser.Id)
-                              .ToList();
-      return View(userRecipes);
+      List<Recipe> model = _db.Recipes.OrderBy(recipe => recipe.Ranking).ToList();
+      return View(model);
     }
 
     public ActionResult Create()
@@ -125,8 +123,12 @@ namespace RecipeBox.Controllers
       return RedirectToAction("Index");
     }
 
-    public ActionResult Ranking()
+
+
+    public async Task<ActionResult> Ranking()
     {
+      string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
       List<Recipe> model = _db.Recipes.OrderBy(recipe => recipe.Ranking).ToList();
       return View(model);
     }
