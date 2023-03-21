@@ -21,3 +21,4 @@ x Recipe has Instructions and Ingredients
 
 Stretch: 
 - figure out list for Recipe Details display
+- change rankings to star system

@@ -125,6 +125,12 @@ namespace RecipeBox.Controllers
       return RedirectToAction("Index");
     }
 
+    public ActionResult Ranking()
+    {
+      List<Recipe> model = _db.Recipes.OrderBy(recipe => recipe.Ranking).ToList();
+      return View(model);
+    }
+
 // This one works! Do not delete! -- Search by recipe title
     // [HttpPost, ActionName("Search")]
     // public ActionResult Search(string search)
