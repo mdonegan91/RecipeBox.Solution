@@ -2,6 +2,7 @@
   Layout = "_Layout";
 }
 
+@using RecipeBox.Models
 @model RecipeBox.Models.Recipe
 
 <h2>Edit this Recipe</h2>
@@ -21,8 +22,12 @@
   @Html.LabelFor(model => model.Instructions)
   @Html.EditorFor(model => model.Instructions)
 
-  @Html.DisplayNameFor(model => model.Ranking)
-  @Html.EditorFor(model => model.Ranking)
+  @Html.LabelFor(model => model.Ranking)
+  @Html.DropDownListFor(model => model.Ranking,
+  new SelectList(Enum.GetValues(typeof(Rating))))
+
+  @* @Html.DisplayNameFor(model => model.Ranking)
+  @Html.EditorFor(model => model.Ranking) *@
 
   <input type="submit" value="Save" />
 }

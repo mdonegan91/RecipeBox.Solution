@@ -125,18 +125,11 @@ namespace RecipeBox.Controllers
       return RedirectToAction("Index");
     }
 
-    // This one works! Do not delete! -- Search by recipe title
+// This one works! Do not delete! -- Search by recipe title
     // [HttpPost, ActionName("Search")]
     // public ActionResult Search(string search)
     // {
     //   List<Recipe> model = _db.Recipes.Where(recipe => recipe.RecipeName == search).ToList();
-    //   return View(model);
-    // }
-
-    // [HttpPost, ActionName("Search")]
-    // public ActionResult Search(string search)
-    // {
-    //   List<Recipe> model = _db.Recipes.Where(recipe => recipe.RecipeName.Contains(search).ToLower()).ToList();
     //   return View(model);
     // }
 

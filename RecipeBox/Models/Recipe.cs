@@ -14,18 +14,17 @@ namespace RecipeBox.Models
 
     [Required(ErrorMessage = "The recipe's instructions can't be empty!")]
     public string Instructions { get; set; }
-    public int Ranking { get; set; }
+    public Rating Ranking { get; set; }
 
     public List<RecipeTag> JoinEntities { get;}
     public ApplicationUser User { get; set; }
-
-    // public static List<Recipe> IngList { get; set; }
-
-    // public Recipe(string ingredient)
-    // {
-    //   Ingredients = ingredient;
-    //   IngList.Add(this);
-    // }
-
   }
+
+  public enum Rating
+  {
+    excellent,
+    good,
+    alright
+  }
+
 }
