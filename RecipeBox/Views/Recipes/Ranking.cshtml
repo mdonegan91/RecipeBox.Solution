@@ -27,3 +27,14 @@ else
   <h4>Recipes</h4>
   <p>Please @Html.ActionLink("log in", "LogIn", "Account") to view or manage your recipes.</p>
 }
+
+<hr>
+
+@using (Html.BeginForm("Search","Recipes")) {
+<label class="mdl-textfield__label" for="sample3">Search All Recipes By Ingredient:</label>
+<br>
+<input class="mdl-textfield__input" type="text" name="search" id="sample3"><br><br>
+<input type="submit" name = "search" value="Search Recipes"/>
+}
+
+<hr>

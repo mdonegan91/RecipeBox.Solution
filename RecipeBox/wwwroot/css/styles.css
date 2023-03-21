@@ -1,0 +1,22 @@
+div#footer {
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	color:white;
+	background:rgb(107, 89, 116);
+  opacity: 70%;
+	padding:8px;
+}
+
+body {
+	background: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), url("./../Images/recipebox3.png"), center no-repeat fixed;
+	background-size: cover;
+  color:rgb(0, 0, 0)000;
+  margin: 20px;
+  padding: 10px;
+}
+
+a {
+  color: rgb(107, 89, 116);
+}

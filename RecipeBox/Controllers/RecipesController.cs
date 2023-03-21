@@ -55,6 +55,30 @@ namespace RecipeBox.Controllers
       }
     }
 
+
+// WIP -- branching pages???
+    // public async Task<ActionResult> Details(int id, Recipe recipe)
+    // {    
+    //     string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+    //     ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
+        
+    //     //if(currentUser){
+    //     //  currentuser = currentUser
+    //     //}
+    //     //else{
+    //     //  currentUser = 0 (set to null so we can )
+    //     //}
+
+    //     ViewBag.CurrentUser = currentUser;
+
+    //   Recipe thisRecipe = _db.Recipes
+    //         .Include(recipe => recipe.JoinEntities)
+    //         .ThenInclude(join => join.Tag)
+    //         .FirstOrDefault(recipe => recipe.RecipeId == id);
+    //   return View(thisRecipe);
+    // }
+
+// This one works, do not delete
     public ActionResult Details(int id)
     {
       Recipe thisRecipe = _db.Recipes

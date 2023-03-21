@@ -22,3 +22,5 @@ x Recipe has Instructions and Ingredients
 Stretch: 
 - figure out list for Recipe Details display
 - change rankings to star system
+
+**TUESDAY : did something happen to tags? can we see each other's tags or only our own?

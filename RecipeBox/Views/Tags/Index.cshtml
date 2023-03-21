@@ -6,6 +6,8 @@
 
 <h1>Tags</h1>
 
+<hr>
+
 @if (@Model.Count == 0)
 {
   <h3>No tags have been added yet!</h3>
@@ -15,5 +17,7 @@
 {
   <li>@Html.ActionLink($"{tag.Cuisine}", "Details", new { id = tag.TagId })</li>
 }
+
+<hr>
 
 <p>@Html.ActionLink("Add new tag", "Create")</p>
