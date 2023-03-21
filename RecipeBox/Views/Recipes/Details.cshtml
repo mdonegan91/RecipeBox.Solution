@@ -19,7 +19,7 @@
 <h3>@Html.DisplayNameFor(model => model.Ranking):</h3>
 <p>@Html.DisplayFor(model => model.Ranking)</p>
 
-@if(@Model.JoinEntities.Count == 0)
+@if (@Model.JoinEntities.Count == 0)
 {
   <p>This recipe does not have any tags yet!</p>
 }
@@ -27,16 +27,20 @@ else
 {
   <h4>This recipe has the following tags:</h4>
   <ul>
-    @foreach(RecipeTag join in Model.JoinEntities)
+  @foreach (RecipeTag join in Model.JoinEntities)
     {
       <li>Tag: @join.Tag.Cuisine</li>
       @using (Html.BeginForm("DeleteJoin", "Recipes"))
       {
         @Html.Hidden("joinId", @join.RecipeTagId)
-        <input type="submit" value="Delete"/>
+        <input type="submit" value="Delete" />
       }
     }
   </ul>
 }
 
-<p>@Html.ActionLink("Edit Recipe", "Edit", new { id = Model.RecipeId }) | @Html.ActionLink("Add a Tag", "AddTag", new { id = Model.RecipeId }) | @Html.ActionLink("Delete Recipe", "Delete", new { id = Model.RecipeId })</p>
+@* @if (@Model.UserId.Equals(@ApplicationUser.UserId))
+{
+  <p>@Html.ActionLink("Edit Recipe", "Edit", new { id = Model.RecipeId }) | @Html.ActionLink("Add a Tag", "AddTag", new {
+  id = Model.RecipeId }) | @Html.ActionLink("Delete Recipe", "Delete", new { id = Model.RecipeId })</p>
+} *@
