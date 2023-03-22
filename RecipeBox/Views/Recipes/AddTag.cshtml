@@ -3,17 +3,18 @@
 }
 
 @model RecipeBox.Models.Recipe
-
+<br>
 <h2>Add a tag</h2>
+<hr>
 
-<h4>Add a tag to this recipe: @Html.DisplayFor(model => model.RecipeName)</h4>
+<h4>Add a tag to: @Html.DisplayFor(model => model.RecipeName)</h4><hr>
 
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.RecipeId)
 
-    @Html.Label("Select tag")
-    @Html.DropDownList("TagId")
+    @Html.Label("Select tag")<br><br>
+    @Html.DropDownList("TagId")<br><br>
 
-    <input type="submit" value="Save" />
+    <input type="submit"  class="buttony" value="Save" />
 }

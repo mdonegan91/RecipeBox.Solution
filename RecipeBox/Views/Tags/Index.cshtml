@@ -4,6 +4,7 @@
 
 @using RecipeBox.Models;
 
+<br>
 <h1>Tags</h1>
 
 <hr>
@@ -15,9 +16,9 @@
 
 @foreach (Tag tag in Model)
 {
-  <li>@Html.ActionLink($"{tag.Cuisine}", "Details", new { id = tag.TagId })</li>
+  <li>@Html.ActionLink($"{tag.Cuisine}", "Details", new { id = tag.TagId }, new { @class = "linky"} )</li>
 }
 
 <hr>
 
-<p>@Html.ActionLink("Add new tag", "Create")</p>
+<p>@Html.ActionLink("Add new tag", "Create", new { id = "nav"}, new { @class = "linky"} )</p>

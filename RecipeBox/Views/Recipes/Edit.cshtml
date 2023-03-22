@@ -5,29 +5,30 @@
 @using RecipeBox.Models
 @model RecipeBox.Models.Recipe
 
-<h2>Edit this Recipe</h2>
+<br>
+<h2>Edit this Recipe:</h2>
 
-<h4>Edit this recipe: @Html.DisplayFor(model => model.RecipeName)</h4>
+<h4>@Html.DisplayFor(model => model.RecipeName)</h4><hr>
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.RecipeId)
 
-  @Html.LabelFor(model => model.RecipeName)
-  @Html.EditorFor(model => model.RecipeName)
+  @Html.LabelFor(model => model.RecipeName)<br>
+  @Html.EditorFor(model => model.RecipeName)<br><br>
 
-  @Html.LabelFor(model => model.Ingredients)
-  @Html.EditorFor(model => model.Ingredients)
+  @Html.LabelFor(model => model.Ingredients)<br>
+  @Html.EditorFor(model => model.Ingredients)<br><br>
 
-  @Html.LabelFor(model => model.Instructions)
-  @Html.EditorFor(model => model.Instructions)
+  @Html.LabelFor(model => model.Instructions)<br>
+  @Html.EditorFor(model => model.Instructions)<br><br>
 
-  @Html.LabelFor(model => model.Ranking)
+  @Html.LabelFor(model => model.Ranking)<br>
   @Html.DropDownListFor(model => model.Ranking,
-  new SelectList(Enum.GetValues(typeof(Rating))))
+  new SelectList(Enum.GetValues(typeof(Rating))), new { @class = "linky"})<br><br>
 
   @* @Html.DisplayNameFor(model => model.Ranking)
   @Html.EditorFor(model => model.Ranking) *@
 
-  <input type="submit" value="Save" />
+  <input type="submit" class="buttony" value="Save" />
 }

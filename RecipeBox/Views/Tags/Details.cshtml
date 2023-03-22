@@ -5,6 +5,7 @@
 @using RecipeBox.Models
 @model RecipeBox.Models.Tag
 
+<br>
 <h2>Tag Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Cuisine): @Html.DisplayFor(model => model.Cuisine)</h3>
@@ -23,11 +24,11 @@ else
     @using (Html.BeginForm("DeleteJoin", "Tags"))
     {
       @Html.Hidden("joinId", @join.RecipeTagId)
-      <input type="submit" value="Delete"/>
+      <input type="submit" class="buttony" value="Delete"/>
     }
   }
-  </ul>
+  </ul><hr>
 }
 
-<p>@Html.ActionLink("Add a Recipe", "AddRecipe", new { id = Model.TagId }) | @Html.ActionLink("Edit Tag", "Edit", new { id = Model.TagId }) | @Html.ActionLink("Delete Tag", "Delete", new { id = Model.TagId })</p>
-<p>@Html.ActionLink("Back to Tag List", "Index")</p>
+<p>@Html.ActionLink("Add a Recipe", "AddRecipe", new { id = Model.TagId }, new { @class = "linky"} ) | @Html.ActionLink("Edit Tag", "Edit", new { id = Model.TagId }, new { @class = "linky"} ) | @Html.ActionLink("Delete Tag", "Delete", new { id = Model.TagId }, new { @class = "linky"} )</p>
+<p>@Html.ActionLink("Back to Tag List", "Index", new { id = "nav"}, new { @class = "linky"} )</p>

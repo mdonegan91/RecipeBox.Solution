@@ -3,11 +3,13 @@
 }
 
 @model RecipeBox.Models.Recipe
-
+<br>
 <h2>Are you sure you want to delete this recipe?</h2>
 
-@Html.DisplayNameFor(model => model.RecipeName): @Html.DisplayFor(model => model.RecipeName)
+@Html.DisplayFor(model => model.RecipeName)
 @using (Html.BeginForm())
+
 {
-  <input type="submit" value="Delete" />
+  <br>
+  <input type="submit" class ="buttony" value="Delete" />
 }

@@ -4,7 +4,7 @@
 
 @using RecipeBox.Models
 @model RecipeBox.Models.Recipe
-
+<br>
 <h4>Add a new recipe</h4>
 
 <p>@Html.ValidationMessageFor(model => model.RecipeName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
@@ -15,23 +15,23 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.RecipeName, "Recipe Name")
-  @Html.TextBoxFor(model => model.RecipeName)
+  @Html.LabelFor(model => model.RecipeName, "Recipe Name")<br>
+  @Html.TextBoxFor(model => model.RecipeName)<br><br>
 
-  @Html.LabelFor(model => model.Ingredients)
-  @Html.TextBoxFor(model => model.Ingredients)
+  @Html.LabelFor(model => model.Ingredients)<br>
+  @Html.TextBoxFor(model => model.Ingredients)<br><br>
 
-  @Html.LabelFor(model => model.Instructions)
-  @Html.TextBoxFor(model => model.Instructions)
+  @Html.LabelFor(model => model.Instructions)<br>
+  @Html.TextBoxFor(model => model.Instructions)<br><br>
 
-  @Html.LabelFor(model => model.Ranking)
+  @Html.LabelFor(model => model.Ranking)<br>
   @Html.DropDownListFor(model => model.Ranking,
-  new SelectList(Enum.GetValues(typeof(Rating))))
+  new SelectList(Enum.GetValues(typeof(Rating))), new { @class = "linky"} )<br><br>
   
 
 
   @* @Html.LabelFor(model => model.Ranking)
   @Html.TextBoxFor(model => model.Ranking) *@
 
-  <input type="submit" value="Add new recipe" />
+  <input type="submit" class="buttony" value="Add new recipe" />
 }

@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-
+<br>
 <h2>Authentication with Identity</h2>
 <hr />
 @if (User.Identity.IsAuthenticated)
@@ -9,10 +9,10 @@
   <p>Hello @User.Identity.Name!</p>
   @using (Html.BeginForm("LogOff", "Account"))
   {
-    <input type="submit" class="btn btn-primary" value="Log out" />
+    <input type="submit" class="buttony" value="Log out" />
   }
 }
 else
 {
-  <p>@Html.ActionLink("Register", "Register") | @Html.ActionLink("Log in", "Login")</p>
+  <p>@Html.ActionLink("Register", "Register", new { id = "nav"}, new { @class = "linky"} ) | @Html.ActionLink("Log in", "Login", new { id = "nav"}, new { @class = "linky"} )</p>
 }

@@ -4,6 +4,7 @@
 
 @using RecipeBox.Models;
 
+<br>
 <h1>Recipes Sorted By Ranking</h1>
 
 <hr>
@@ -18,7 +19,7 @@
   <ul>
   @foreach (Recipe recipe in Model)
     {
-      <li>@Html.ActionLink($"{recipe.RecipeName}", "Details", new { id = recipe.RecipeId }) | @Html.ActionLink($"{recipe.Ranking}", "Details", new { id = recipe.RecipeId })</li>
+      <li>@Html.ActionLink($"{recipe.RecipeName}", "Details", new { id = recipe.RecipeId }, new { @class = "linky"} ) | @Html.ActionLink($"{recipe.Ranking}", "Details", new { id = recipe.RecipeId }, new { @class = "linky"} )</li>
     }
   </ul>
 }
@@ -31,10 +32,10 @@ else
 <hr>
 
 @using (Html.BeginForm("Search","Recipes")) {
-<label class="mdl-textfield__label" for="sample3">Search All Recipes By Ingredient:</label>
-<br>
-<input class="mdl-textfield__input" type="text" name="search" id="sample3"><br><br>
-<input type="submit" name = "search" value="Search Recipes"/>
+<div class="search-container">
+        <input type="text" name="search" placeholder="Search All Recipes by Ingredient..." class="search-input">
+        <a href="#" class="search-btn">
+                <i class="fas fa-search"></i>      
+        </a>
+    </div>
 }
-
-<hr>

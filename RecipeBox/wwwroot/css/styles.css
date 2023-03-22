@@ -4,7 +4,7 @@ div#footer {
 	left:0px;
 	width:100%;
 	color:white;
-	background:rgb(107, 89, 116);
+	background:rgb(175,181,188);
   opacity: 70%;
 	padding:8px;
 }
@@ -13,10 +13,98 @@ body {
 	background: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), url("./../Images/recipebox3.png"), center no-repeat fixed;
 	background-size: cover;
   color:rgb(0, 0, 0)000;
-  margin: 20px;
+  margin: 50px;
   padding: 10px;
-}
+  font-size: larger;
+} 
 
 a {
-  color: rgb(107, 89, 116);
+	text-decoration: none;
+	color: inherit;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+	gap: 25px;
+}
+
+.linky {
+	position: relative;
+	display: inline-block;
+  color: slategrey;
+  font-weight:lighter;
+  font-size:larger;
+}
+
+.linky::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #afb5bc;
+	border-radius: 4px;
+	scale: 0 1;
+	transform-origin: right;
+	transition: scale 0.25s;
+}
+
+.linky:hover::before {
+	scale: 1;
+	transform-origin: left;
+}
+
+.linky:hover {
+  color: black;
+}
+
+hr {
+  width: 25%;
+  border-style: dotted none none;
+  border-width: 7px;
+  border-color: rgb(175,181,188);
+}
+
+input[type=text] {
+  width: 300px;
+  height: 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  background-image: linear-gradient(rgb(199, 217, 237),rgb(216, 239, 237));
+  border: none;
+}
+
+input[type=password] {
+  width: 300px;
+  height: 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  background-image: linear-gradient(rgb(199, 217, 237),rgb(216, 239, 237));
+  border: none;
+}
+
+input[type=text]:focus {
+  width: 25%;
+}
+
+input[type=password]:focus {
+  width: 25%;
+}
+
+.buttony {
+  background: linear-gradient(rgb(199, 217, 237),rgb(216, 239, 237));
+  border-style: none;
+  padding: 5px;
+}
+
+.buttony:hover {
+  background: linear-gradient(rgb(140, 184, 235),rgb(216, 239, 237));
 }

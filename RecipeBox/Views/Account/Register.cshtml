@@ -5,7 +5,7 @@
 @using RecipeBox.ViewModels
 
 @model RegisterViewModel
-
+<br>
 <h2>Register a new user</h2>
 <hr />
 
@@ -16,16 +16,16 @@
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post))
 {
-  @Html.LabelFor(user => user.Email)
-  @Html.TextBoxFor(user=> user.Email)
+  @Html.LabelFor(user => user.Email)<br>
+  @Html.TextBoxFor(user=> user.Email)<br><br>
 
-  @Html.LabelFor(user=> user.Password)
-  @Html.EditorFor(user=> user.Password)
+  @Html.LabelFor(user=> user.Password)<br>
+  @Html.EditorFor(user=> user.Password)<br><br>
 
-  @Html.LabelFor(user=> user.ConfirmPassword)
-  @Html.EditorFor(user=> user.ConfirmPassword)
+  @Html.LabelFor(user=> user.ConfirmPassword)<br>
+  @Html.EditorFor(user=> user.ConfirmPassword)<br><br>
 
-  <input type="submit" value="Register" />
+  <input type="submit"  class="buttony" value="Register" /><br><br>
 }
 
-<p>@Html.ActionLink("Back to accounts page", "Index")</p>
+<p>@Html.ActionLink("Back to accounts page", "Index", new { id = "nav"}, new { @class = "linky"} )</p>

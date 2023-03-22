@@ -6,20 +6,23 @@
 @using RecipeBox.Models
 @model RecipeBox.Models.Recipe
 
+<br>
 <h2>Recipe Details</h2>
 <hr />
-<h3>Recipe Name: @Html.DisplayFor(model => model.RecipeName)</h3>
+<h3>Recipe Name: @Html.DisplayFor(model => model.RecipeName)</h3><hr>
 
 <h3>@Html.DisplayNameFor(model => model.Ingredients): </h3>
-<p>Here are the ingredients you will need: </p>
 <p>@Html.DisplayFor(model => model.Ingredients)</p> @* Fix this! *@
 
+<hr>
 <h3>@Html.DisplayNameFor(model => model.Instructions):</h3>
 <p>@Html.DisplayFor(model => model.Instructions)</p>
 
+<hr>
 <h3>@Html.DisplayNameFor(model => model.Ranking):</h3>
 <p>@Html.DisplayFor(model => model.Ranking)</p>
 
+<hr>
 @if (@Model.JoinEntities.Count == 0)
 {
   <p>This recipe does not have any tags yet!</p>
@@ -34,14 +37,15 @@ else
       @using (Html.BeginForm("DeleteJoin", "Recipes"))
       {
         @Html.Hidden("joinId", @join.RecipeTagId)
-        <input type="submit" value="Delete" />
+        <input type="submit" class="buttony" value="Delete" />
       }
     }
   </ul>
 }
 
-<p>@Html.ActionLink("Edit Recipe", "Edit", new { id = Model.RecipeId }) | @Html.ActionLink("Delete Recipe", "Delete", new { id = Model.RecipeId }) | @Html.ActionLink("Add a Tag", "AddTag", new {
-  id = Model.RecipeId })</p>
+<hr>
+<p>@Html.ActionLink("Edit Recipe", "Edit", new { id = Model.RecipeId }, new { @class = "linky"} ) | @Html.ActionLink("Delete Recipe", "Delete", new { id = Model.RecipeId }, new { @class = "linky"} ) | @Html.ActionLink("Add a Tag", "AddTag", new {
+  id = Model.RecipeId }, new { @class = "linky"} )</p>
 
 @* @if (@Model.User.Id.Equals(@ViewBag.CurrentUser))
 {
