@@ -1,11 +1,13 @@
-# _Recipe Box_
+# 🍲 Recipe Box 🍲
 
 #### By Sarah Andyshak, Asia Kaplanyan, Mesha Devan, Molly Donegan, Noah Atkinson, Eliot Gronstal
 
 #### _A MVC app that allows users to keep track of recipes featuring authentication and authorization. Made for Week 6 of C# at Epicodus Coding School._
 
-## Technologies Used
+![](landingpage.png)
 
+## 🧂 Technologies Used 
+ 
 * _C#_
 * _.NET_
 * _HTML_
@@ -14,8 +16,7 @@
 * _Entity Framework_
 * _CSS_
 
-
-## Description
+## 🧂 Description 🧂
 
 _A MVC app that allows users to keep track of recipes featuring authentication and authorization._
 
@@ -49,7 +50,7 @@ OR
 
 * All users have read functionality.
 
-## Setup/Installation Requirements
+## 🧂 Setup/Installation Requirements 🧂
 
 * 🔨 _Clone this repo._
 * 🔨 _Open your terminal (e.g., Terminal or GitBash) and navigate to this project's production directory called "RecipeBox"._
@@ -60,7 +61,7 @@ OR
 * 🔨 _If you want to run the project in production mode with a watcher, you can use a command line flag to specify that you want to run the "production" profile. ``dotnet watch run --launch-profile "production"``_
 * 🔨 _Open the browser to [https://localhost:5001]. If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, review this lesson: [Redirecting to HTTPS and Issuing a Security Certificate.](https://www.learnhowtoprogram.com/c-and-net/basic-web-applications/redirecting-to-https-and-issuing-a-security-certificate)_
 
-## SQL Workbench Configuration
+## 🧂 SQL Workbench Configuration 🧂
 * 🔧 _Create an `appsetting.json` file in the "Factory" directory of the project._
 * 🔧 _Within `appsettings.json`, put in the following code, replacing the `uid` and `pwd` values with your own username and password for MySQL._ 
 ```json
@@ -73,28 +74,22 @@ OR
 * 🔧 _If you'd like to push this cloned project to a public-facing repository, remember to add the appsettings.json file to your .gitignore first._
 * 🔧 _Once "appsettings.json" file has been created, follow the below directions for Entity Framework Migration Configuration._ 
 
-## Entity Framework Migration Configuration
+## 🧂 Entity Framework Migration Configuration 🧂
 
-* 🧑‍🏭 _In root directory of project folder "RecipeBox", run `dotnet ef migrations add restoreDatabase`_
-* 🧑‍🏭 _Then run $ `dotnet ef database update`_
-* 🧑‍🏭 _Open SQL Workbench._
-* 🧑‍🏭 _Navigate to `"recipe_box"` schema._
-* 🧑‍🏭 _Click the drop down, select "Tables" drop down._
-* 🧑‍🏭 _Verify the tables._
+* _In root directory of project folder "RecipeBox", run `dotnet ef migrations add restoreDatabase`_
+* _Then run $ `dotnet ef database update`_
+* _Open SQL Workbench._
+* _Navigate to `"recipe_box"` schema._
+* _Click the drop down, select "Tables" drop down._
+* _Verify the tables._
 
-## Test Instructions
-
-* 🔨 _Using a shell program, navigate from the root directory, "RecipeBox.Solution," to the "RecipeBox.Tests" directory._
-* 🔨 _Once in the "RecipeBox.Tests" directory, type ``dotnet restore`` into the console._
-* 🔨 _After the restore process is complete, type ``dotnet test`` into the console. This will run all written tests and display the test results into the console to review._
-
-## Known Bugs
+## 🥟 Known Bugs 🥟
 
 * _No known bugs._
 
 * _Please reach out with any questions or concerns_
 
-## License
+## 🥟 License 🥟
 
 _[MIT](https://opensource.org/license/mit/)_
 
