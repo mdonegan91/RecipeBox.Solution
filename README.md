@@ -6,7 +6,7 @@
 
 ![](landingpage.png)
 
-## 🧂 Technologies Used 
+## 🧂 Technologies Used 🧂
  
 * _C#_
 * _.NET_
