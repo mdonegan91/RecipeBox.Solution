@@ -92,11 +92,11 @@ input[type=password] {
 }
 
 input[type=text]:focus {
-  width: 25%;
+  width: 30%;
 }
 
 input[type=password]:focus {
-  width: 25%;
+  width: 30%;
 }
 
 .buttony {
